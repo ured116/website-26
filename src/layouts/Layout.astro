@@ -8,7 +8,46 @@
 		<title>ARGS Robotics</title>
 	</head>
 	<body>
-		<slot />
+		<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Astro Site</title>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    <button id="toggle-theme">Toggle Dark Mode</button>
+    <p>This is a light/dark mode demo.</p>
+
+    <script>
+      const button = document.getElementById('toggle-theme');
+      const html = document.documentElement;
+
+      // Set theme from localStorage on load
+      if (localStorage.theme) {
+        html.classList.add(localStorage.theme);
+        html.classList.remove(localStorage.theme === 'dark' ? 'light' : 'dark');
+      }
+    </script>
+
+    <style>
+      html.light {
+        background-color: white;
+        color: black;
+      }
+
+      html.dark {
+        background-color: #121212;
+        color: white;
+      }
+
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    </style>
+  </body>
+</html>
+
 	</body>
 </html>
 
